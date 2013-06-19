@@ -10,10 +10,6 @@ See LICENSE for licensing information.
 
 import logging
 from lxml import etree
-try:
-    from PIL import Image
-except ImportError:
-    import Image
 import zipfile
 import shutil
 import re
@@ -407,6 +403,12 @@ def picture(relationshiplist, picname, picdescription, pixelwidth=None, pixelhei
     # Create an image. Size may be specified, otherwise it will based on the
     # pixel size of image. Return a paragraph containing the picture'''
     # Copy the file into the media dir
+
+    try:
+        from PIL import Image
+    except ImportError:
+        import Image
+
     media_dir = join(template_dir, 'word', 'media')
     if not os.path.isdir(media_dir):
         os.mkdir(media_dir)
