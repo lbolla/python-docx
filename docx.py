@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.6
+# flake8: noqa
 # -*- coding: utf-8 -*-
 """
 Open and modify Microsoft Word 2007 docx files (called 'OpenXML' and
@@ -9,7 +9,7 @@ See LICENSE for licensing information.
 """
 
 import logging
-from lxml import etree
+from xml.etree import ElementTree as etree
 import zipfile
 import shutil
 import re
